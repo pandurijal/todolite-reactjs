@@ -5,3 +5,11 @@
 input {
   padding: 3px 0;
 }
+
+.toggleComplete {
+  text-decoration: line-through;
+}
+
+.toggleComplete:hover {
+  text-decoration: line-through;
+}

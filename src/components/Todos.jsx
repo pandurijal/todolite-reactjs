@@ -1,17 +1,34 @@
 import React, { Component } from "react";
 
-const Todos = ({ todos, deleteTodo }) => {
+const Todos = ({ todos, deleteTodo, toggleComplete }) => {
   const todoList = todos.length ? (
     todos.map(todo => {
       return (
         <ul className="list-group" key={todo.id}>
           <li
-            onClick={() => {
-              deleteTodo(todo.id);
-            }}
-            className="list-group-item"
+            className={
+              todo.complete === true
+                ? "list-group-item toggleComplete"
+                : "list-group-item"
+            }
           >
             {todo.content}
+            <button
+              onClick={() => {
+                toggleComplete(todo.id);
+              }}
+              className="btn btn-primary"
+            >
+              V
+            </button>
+            <button
+              onClick={() => {
+                deleteTodo(todo.id);
+              }}
+              className="btn btn-danger"
+            >
+              X
+            </button>
           </li>
         </ul>
       );
