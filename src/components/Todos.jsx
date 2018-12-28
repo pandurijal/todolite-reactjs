@@ -4,15 +4,11 @@ const Todos = ({ todos, deleteTodo, toggleComplete }) => {
   const todoList = todos.length ? (
     todos.map(todo => {
       return (
-        <ul className="list-group" key={todo.id}>
-          <li
-            className={
-              todo.complete === true
-                ? "list-group-item toggleComplete"
-                : "list-group-item"
-            }
-          >
-            {todo.content}
+        <div className="group-todo" key={todo.id}>
+          <div className="list-todo">
+            <span className={todo.complete === true ? "toggleComplete" : ""}>
+              {todo.content}
+            </span>
             <button
               onClick={() => {
                 toggleComplete(todo.id);
@@ -25,12 +21,12 @@ const Todos = ({ todos, deleteTodo, toggleComplete }) => {
               onClick={() => {
                 deleteTodo(todo.id);
               }}
-              className="btn btn-danger"
+              className="btn btn-danger btn-delete"
             >
               X
             </button>
-          </li>
-        </ul>
+          </div>
+        </div>
       );
     })
   ) : (

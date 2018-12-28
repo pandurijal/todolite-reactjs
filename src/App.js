@@ -9,7 +9,7 @@ class App extends Component {
     todos: [
       { id: 0, content: "todos 1", complete: false },
       { id: 1, content: "todos 2", complete: false },
-      { id: 2, content: "todos 3", complete: false },
+      { id: 2, content: "todos 3", complete: true },
       { id: 3, content: "todos 4", complete: false }
     ]
   };

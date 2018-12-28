@@ -2,14 +2,28 @@
   text-align: center;
 }
 
+form.add-todo {
+  margin: 15px 0;
+}
+
 input {
   padding: 3px 0;
+  margin: 15px;
 }
 
 .toggleComplete {
   text-decoration: line-through;
 }
 
-.toggleComplete:hover {
-  text-decoration: line-through;
+.group-todo {
+  border-bottom: solid 1px #000;
+  padding: 5px;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.btn-delete {
+  position: absolute;
+  right: 30px;
 }
