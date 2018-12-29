@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 const Header = ({ todos }) => {
+  console.log(todos);
   const handleCount = todos.length ? <p>{todos.length} Things to do</p> : <p />;
   return (
     <div>

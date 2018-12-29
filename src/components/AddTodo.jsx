@@ -20,13 +20,14 @@ class AddTodo extends Component {
 
   render() {
     return (
-      <div>
+      <div className="form-box">
         <form classname="add-todo" onSubmit={this.handleSubmit}>
           <input
             type="text"
             onChange={this.handleChange}
             value={this.state.content}
             placeholder="Add Todo.."
+            autoFocus
           />
         </form>
       </div>

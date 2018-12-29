@@ -2,28 +2,92 @@
   text-align: center;
 }
 
-form.add-todo {
+.form-box {
   margin: 15px 0;
 }
 
-input {
+.form-box input {
   padding: 3px 0;
-  margin: 15px;
+  border: none;
+  border-bottom: solid 1px #080808;
+  padding: 2px 5px;
 }
 
-.toggleComplete {
-  text-decoration: line-through;
+.form-box input:focus {
+  outline: none;
+  border-bottom: solid 2px #2980b9;
 }
 
 .group-todo {
   border-bottom: solid 1px #000;
   padding: 5px;
   width: 50%;
-  margin: 0 auto;
+  margin: 10px auto;
   position: relative;
 }
 
 .btn-delete {
   position: absolute;
   right: 30px;
+  border-radius: 100%;
+  padding: 0 2px;
+  color: #e74c3c;
+  background: none;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-delete:hover {
+  cursor: pointer;
+  outline: none;
+  color: #c0392b;
+  background: none;
+}
+
+.input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.input-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  cursor: pointer;
+}
+
+/* .toggleComplete {
+  text-decoration: line-through;
+} */
+
+@keyframes completed {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.completed {
+  position: relative;
+}
+.completed:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #3498db;
+  animation-name: completed;
+  animation-duration: 0.25s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }

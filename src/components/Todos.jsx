@@ -6,17 +6,21 @@ const Todos = ({ todos, deleteTodo, toggleComplete }) => {
       return (
         <div className="group-todo" key={todo.id}>
           <div className="list-todo">
-            <span className={todo.complete === true ? "toggleComplete" : ""}>
-              {todo.content}
-            </span>
-            <button
+            <input
+              className="input-checkbox"
+              type="checkbox"
               onClick={() => {
                 toggleComplete(todo.id);
               }}
-              className="btn btn-primary"
+              checked={todo.complete}
+              name={todo.content}
+            />
+            <label
+              className={todo.complete === true ? "completed" : ""}
+              for={todo.content}
             >
-              V
-            </button>
+              {todo.content}
+            </label>
             <button
               onClick={() => {
                 deleteTodo(todo.id);
