@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
 const Todos = ({ todos, deleteTodo }) => {
   const todoList = todos.length ? (
-    todos.map(todo => {
+    todos.map((todo) => {
       return (
         <ul className="list-group" key={todo.id}>
           <li

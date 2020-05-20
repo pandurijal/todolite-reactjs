@@ -2,25 +2,25 @@ import React, { Component } from "react";
 
 class AddTodo extends Component {
   state = {
-    content: ""
+    content: "",
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     const content = e.target.value;
     this.setState({ content });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.addTodo(this.state);
     this.setState({
-      content: ""
+      content: "",
     });
   };
 
   render() {
     return (
-      <div>
+      <div className="add-todo">
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"

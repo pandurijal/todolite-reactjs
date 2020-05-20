@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./components/Header";
 import AddTodo from "./components/AddTodo";
+
 import Todos from "./components/Todos";
 import "./App.css";
 
@@ -10,18 +11,18 @@ class App extends Component {
       { id: 1, content: "todos1" },
       { id: 2, content: "todos2" },
       { id: 3, content: "todos3" },
-      { id: 4, content: "todos4" }
-    ]
+      { id: 4, content: "todos4" },
+    ],
   };
 
-  addTodo = todo => {
+  addTodo = (todo) => {
     todo.id = Math.random();
     let todos = [...this.state.todos, todo];
     this.setState({ todos });
   };
 
-  deleteTodo = id => {
-    const todos = this.state.todos.filter(todo => todo.id !== id);
+  deleteTodo = (id) => {
+    const todos = this.state.todos.filter((todo) => todo.id !== id);
     this.setState({ todos });
   };
 
